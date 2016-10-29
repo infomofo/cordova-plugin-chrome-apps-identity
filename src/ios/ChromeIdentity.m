@@ -5,7 +5,6 @@
 #import <Cordova/CDVPlugin.h>
 #import <Foundation/Foundation.h>
 #import <GoogleOpenSource/GoogleOpenSource.h>
-#import <GooglePlus/GooglePlus.h>
 #import "AppDelegate.h"
 
 #if CHROME_IDENTITY_VERBOSE_LOGGING
@@ -45,8 +44,6 @@ static void swizzleMethod(Class class, SEL destinationSelector, SEL sourceSelect
 - (void)pluginInitialize
 {
     GPPSignIn *signIn = [GPPSignIn sharedInstance];
-    [signIn setShouldFetchGoogleUserEmail:YES];
-    [signIn setShouldFetchGooglePlusUser:YES];
     [signIn setDelegate:self];
 }
 
